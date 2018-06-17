@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>FaceBook-Connect</title>
+</head>
+<body>
+	<h1>
+		Hello , <span th:text="${profileName}"></span>!
+	</h1>
+	<h4>Here is your feed:</h4>
+
+	<div th:each="post:${posts}">
+		<b th:text="${post.from.name}">from</b> wrote:
+		<p th:text="${post.message}">message text</p>
+		<img th:if="${post.picture}" th:src="${post.picture}" />
+		<hr />
+	</div>
+</body>
+</html>
